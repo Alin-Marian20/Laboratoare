@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercitiul 3</title>
+</head>
+<body>
+
+    <button id="buton">Schimba paragrafele</button>
+
+    <p id="p1" style="color: blue;">
+        Acesta este primul paragraf.
+    </p>
+
+    <p id="p2" style="color: red; font-style: italic;">
+        Acesta este al doilea paragraf.
+    </p>
+
+    <script>
+        document.getElementById("p1").onclick = function() {
+            var text = prompt("Introduceti un text nou:");
+
+            if (text !== null && text !== "") {
+                this.innerHTML = text;
+            }
+        };
+
+        document.getElementById("p2").onclick = function() {
+            var text = prompt("Introduceti un text nou:");
+
+            if (text !== null && text !== "") {
+                this.innerHTML = text;
+            }
+        };
+
+        document.getElementById("buton").onclick = function() {
+            var aux = document.getElementById("p1").innerHTML;
+
+            document.getElementById("p1").innerHTML =
+                document.getElementById("p2").innerHTML;
+
+            document.getElementById("p2").innerHTML = aux;
+        };
+    </script>
+
+</body>
+</html>
